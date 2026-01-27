@@ -1,0 +1,18 @@
+{
+  "name": "sarahsite",
+  "version": "1.0.0",
+  "description": "- `index.html` : page d’accueil (présentation, valeurs, formulaire de contact). - `massages.html` : présentation détaillée du massage équin. - `communication.html` : explications sur la communication animale. - `formules.html` : ensemble des formules et tarifs (massages, suivis, communication, concours). - `assets/css/styles.css` : feuille de styles principale (mise en page, typographie, couleurs). - `assets/img/logo-animarah.png` : logo Animarah utilisé dans le header.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
