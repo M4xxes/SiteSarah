@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import { MassagesPage } from "./pages/MassagesPage";
 import { CommunicationPage } from "./pages/CommunicationPage";
 import { FormulesPage } from "./pages/FormulesPage";
+import { ContactPage } from "./pages/ContactPage";
 import logo from "../assets/img/logo-animarah.png";
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -44,6 +45,12 @@ function Layout({ children }: { children: React.ReactNode }) {
             >
               Formules
             </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "is-active" : "")}
+            >
+              Me contacter
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -71,6 +78,7 @@ export function App() {
         <Route path="/massages" element={<MassagesPage />} />
         <Route path="/communication" element={<CommunicationPage />} />
         <Route path="/formules" element={<FormulesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Layout>
   );

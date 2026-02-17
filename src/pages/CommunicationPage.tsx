@@ -1,3 +1,38 @@
+import { Timeline } from "../components/Timeline";
+
+const COMMUNICATION_STEPS = [
+  {
+    number: 1,
+    title: "Préparation",
+    text: "Choix de la formule, prise de contact, puis envoi des informations nécessaires et du règlement pour valider la séance.",
+  },
+  {
+    number: 2,
+    title: "Connexion",
+    text: "J’établis une connexion subtile avec votre animal, à distance, dans le calme et le respect de son rythme.",
+  },
+  {
+    number: 3,
+    title: "Présentation",
+    text: "Je me présente à lui de votre part et m’assure qu’il est d’accord pour échanger.",
+  },
+  {
+    number: 4,
+    title: "Conversation",
+    text: "Je commence par des questions simples, puis j’adapte le dialogue selon la prestation choisie et les besoins identifiés.",
+  },
+  {
+    number: 5,
+    title: "Séparation",
+    text: "Je remercie l’animal, l’informe que je transmettrai le compte rendu à son gardien, puis je lui dis au revoir.",
+  },
+  {
+    number: 6,
+    title: "Compte rendu",
+    text: "Je prépare et vous transmets le compte rendu de la séance, généralement à l’oral, en reprenant les messages et ressentis principaux.",
+  },
+];
+
 export function CommunicationPage() {
   return (
     <>
@@ -68,51 +103,6 @@ export function CommunicationPage() {
               <li>Le nom de son gardien (propriétaire)</li>
               <li>L’accord de son gardien (propriétaire)</li>
             </ul>
-
-            <h3>Déroulé d’une séance</h3>
-            <div className="steps">
-              <div className="step-card">
-                <div className="step-number">01 • Préparation</div>
-                <div className="step-body">
-                  Choix de la formule, prise de contact, puis envoi des informations nécessaires et
-                  du règlement pour valider la séance.
-                </div>
-              </div>
-              <div className="step-card">
-                <div className="step-number">02 • Connexion</div>
-                <div className="step-body">
-                  J’établis une connexion subtile avec votre animal, à distance, dans le calme et le
-                  respect de son rythme.
-                </div>
-              </div>
-              <div className="step-card">
-                <div className="step-number">03 • Présentation</div>
-                <div className="step-body">
-                  Je me présente à lui de votre part et m’assure qu’il est d’accord pour échanger.
-                </div>
-              </div>
-              <div className="step-card">
-                <div className="step-number">04 • Conversation</div>
-                <div className="step-body">
-                  Je commence par des questions simples, puis j’adapte le dialogue selon la
-                  prestation choisie et les besoins identifiés.
-                </div>
-              </div>
-              <div className="step-card">
-                <div className="step-number">05 • Séparation</div>
-                <div className="step-body">
-                  Je remercie l’animal, l’informe que je transmettrai le compte rendu à son gardien,
-                  puis je lui dis au revoir.
-                </div>
-              </div>
-              <div className="step-card">
-                <div className="step-number">06 • Compte rendu</div>
-                <div className="step-body">
-                  Je prépare et vous transmets le compte rendu de la séance, généralement à
-                  l’oral, en reprenant les messages et ressentis principaux.
-                </div>
-              </div>
-            </div>
             <p className="note">
               La communication animale ne remplace en aucun cas un diagnostic ou un avis
               vétérinaire, mais vient en complément, en apportant une autre forme d’écoute et de
@@ -121,6 +111,8 @@ export function CommunicationPage() {
           </aside>
         </div>
       </section>
+
+      <Timeline title="Déroulé d’une séance" steps={COMMUNICATION_STEPS} />
 
       <section>
         <div className="container section-heading">

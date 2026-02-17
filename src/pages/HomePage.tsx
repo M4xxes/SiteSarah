@@ -1,3 +1,39 @@
+import { Link } from "react-router-dom";
+import { Timeline } from "../components/Timeline";
+
+const SESSION_STEPS = [
+  {
+    number: 1,
+    title: "Préparation",
+    text: "Choisissez la formule qui vous convient, contactez-moi pour planifier votre séance, puis procédez au règlement et à l’envoi des informations nécessaires.",
+  },
+  {
+    number: 2,
+    title: "Connexion",
+    text: "C’est le moment où j’établis une connexion avec votre animal, à distance, dans le calme et le respect de son rythme.",
+  },
+  {
+    number: 3,
+    title: "Présentation",
+    text: "Je me présente à votre compagnon de votre part et lui demande s’il est d’accord pour échanger.",
+  },
+  {
+    number: 4,
+    title: "Conversation",
+    text: "Je commence par des questions simples comme « Comment vas-tu ? » ou « Es-tu heureux ? », puis j’adapte le dialogue selon la prestation choisie.",
+  },
+  {
+    number: 5,
+    title: "Instant de séparation",
+    text: "Je le remercie, lui dis que je transmettrai les informations à son gardien, puis lui dis au revoir.",
+  },
+  {
+    number: 6,
+    title: "Compte rendu",
+    text: "Je prépare et vous transmets le compte rendu de la séance, généralement à l’oral, en reprenant les messages et ressentis principaux.",
+  },
+];
+
 export function HomePage() {
   return (
     <>
@@ -17,15 +53,18 @@ export function HomePage() {
                 physique et émotionnel.
               </p>
               <div className="hero-actions">
-                <a href="/massages" className="btn btn-primary">
+                <Link to="/massages" className="btn btn-primary">
                   Massages équins
-                </a>
-                <a href="/communication" className="btn btn-outline">
+                </Link>
+                <Link to="/communication" className="btn btn-outline">
                   Communication animale
-                </a>
-                <a href="/formules" className="btn btn-outline">
+                </Link>
+                <Link to="/formules" className="btn btn-outline">
                   Formules &amp; tarifs
-                </a>
+                </Link>
+                <Link to="/contact" className="btn btn-outline">
+                  Me contacter
+                </Link>
               </div>
             </div>
             <aside className="hero-panel">
@@ -42,10 +81,15 @@ export function HomePage() {
         </div>
       </section>
 
-      <section>
-        <div className="container two-column">
-          <article className="prose">
-            <h2>Mon histoire</h2>
+      <Timeline title="Déroulé d’une séance" steps={SESSION_STEPS} />
+
+      <section className="section-presentation">
+        <div className="container">
+          <div className="section-heading">
+            <div className="section-kicker">Présentation</div>
+            <h2 className="section-title">Mon histoire</h2>
+          </div>
+          <div className="prose prose--spaced prose--centered">
             <p>
               Après un parcours scolaire classique et des études en architecture d’intérieur, j’ai
               longtemps gardé les animaux comme une passion personnelle. Pourtant, malgré mon
@@ -72,100 +116,53 @@ export function HomePage() {
               C’est ainsi qu’est née <strong>ANIMARAH</strong>, une entreprise dédiée au bien-être animal,
               avec une approche respectueuse, douce et bienveillante.
             </p>
-          </article>
-          <aside>
-            <div className="section-heading" style={{ textAlign: "left" }}>
-              <div className="section-kicker">Mes engagements</div>
-              <h2 className="section-title">Mes valeurs &amp; mon approche</h2>
-              <p
-                className="section-intro"
-                style={{ marginLeft: 0, marginRight: 0 }}
-              >
-                Chaque rencontre avec un cheval est unique. J’accorde une attention particulière à
-                son rythme, à son histoire et à ce qu’il souhaite exprimer, dans le respect de son
-                corps et de ses émotions.
-              </p>
-            </div>
-            <div className="values-grid">
-              <div className="value-card">
-                <div className="value-kicker">🌿 Respect &amp; écoute</div>
-                <div className="value-body">
-                  Chaque séance est réalisée dans le respect du cheval, en étant attentive à ses
-                  réactions, ses besoins et ses limites, afin de lui offrir un moment de bien-être en
-                  toute confiance.
-                </div>
-              </div>
-              <div className="value-card">
-                <div className="value-kicker">🌿 Calme &amp; délicatesse</div>
-                <div className="value-body">
-                  Je prends le temps nécessaire pour que le cheval se détende, en privilégiant des
-                  gestes lents et mesurés, adaptés à son rythme et à sa sensibilité.
-                </div>
-              </div>
-              <div className="value-card">
-                <div className="value-kicker">🌿 Adaptation</div>
-                <div className="value-body">
-                  Aucune séance n’est identique&nbsp;: j’adapte mon travail à chaque cheval, à son état
-                  physique, émotionnel et à ses besoins.
-                </div>
-              </div>
-            </div>
-          </aside>
+          </div>
         </div>
       </section>
 
-      <section className="contact-section">
-        <div className="container contact-grid">
-          <div>
-            <div className="section-kicker">Prendre rendez-vous</div>
-            <h2 className="section-title">Me contacter</h2>
+      <section>
+        <div className="container">
+          <div className="section-heading" style={{ textAlign: "left" }}>
+            <div className="section-kicker">Mes engagements</div>
+            <h2 className="section-title">Mes valeurs &amp; mon approche</h2>
             <p
               className="section-intro"
-              style={{ marginLeft: 0, marginRight: 0 }}
+              style={{ marginLeft: 0, marginRight: 0, textAlign: "left" }}
             >
-              Pour toute demande d’informations, de rendez-vous ou pour échanger sur les besoins
-              de votre cheval, vous pouvez me contacter directement via les réseaux ci-dessous.
-            </p>
-            <p className="note">
-              Les séances se déroulent en région lyonnaise et ses alentours. Les frais de
-              déplacement peuvent être mutualisés lorsqu’une intervention est réalisée sur un même
-              lieu pour plusieurs chevaux.
+              Chaque rencontre avec un cheval est unique. J’accorde une attention particulière à
+              son rythme, à son histoire et à ce qu’il souhaite exprimer, dans le respect de son
+              corps et de ses émotions.
             </p>
           </div>
-          <div className="contact-card">
-            <div className="section-kicker">Réseaux &amp; contact</div>
-            <p className="note">Cliquez sur le canal qui vous convient le mieux.</p>
-            <div style={{ display: "grid", gap: "0.6rem", marginTop: "1.1rem" }}>
-              <a
-                className="btn btn-primary"
-                style={{ width: "100%", justifyContent: "flex-start" }}
-                href="https://www.instagram.com/_animarah_/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram – @_animarah_
-              </a>
-              <a
-                className="btn btn-outline"
-                style={{ width: "100%", justifyContent: "flex-start" }}
-                href="mailto:animarah.pascual@gmail.com"
-              >
-                E-mail – animarah.pascual@gmail.com
-              </a>
-              <a
-                className="btn btn-outline"
-                style={{ width: "100%", justifyContent: "flex-start" }}
-                href="https://www.facebook.com/people/Animarah/61568162491616/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook – Page Animarah
-              </a>
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-kicker">🌿 Respect &amp; écoute</div>
+              <div className="value-body">
+                Chaque séance est réalisée dans le respect du cheval, en étant attentive à ses
+                réactions, ses besoins et ses limites, afin de lui offrir un moment de bien-être en
+                toute confiance.
+              </div>
             </div>
+            <div className="value-card">
+              <div className="value-kicker">🌿 Calme &amp; délicatesse</div>
+              <div className="value-body">
+                Je prends le temps nécessaire pour que le cheval se détende, en privilégiant des
+                gestes lents et mesurés, adaptés à son rythme et à sa sensibilité.
+              </div>
+            </div>
+            <div className="value-card">
+              <div className="value-kicker">🌿 Adaptation</div>
+              <div className="value-body">
+                Aucune séance n’est identique&nbsp;: j’adapte mon travail à chaque cheval, à son état
+                physique, émotionnel et à ses besoins.
+              </div>
+            </div>
+          </div>
+          <div className="section-cta" style={{ marginTop: "2.5rem", textAlign: "center" }}>
+            <Link to="/contact" className="btn btn-primary">Me contacter</Link>
           </div>
         </div>
       </section>
     </>
   );
 }
-

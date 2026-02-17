@@ -1,3 +1,38 @@
+import { Timeline } from "../components/Timeline";
+
+const MASSAGE_STEPS = [
+  {
+    number: 1,
+    title: "Préparation",
+    text: "Échange préalable pour comprendre les besoins de votre cheval (âge, activité, antécédents, attentes) et planifier la séance.",
+  },
+  {
+    number: 2,
+    title: "Observation",
+    text: "Analyse de la posture, de l’attitude générale, des réactions et éventuelles zones de tension apparentes.",
+  },
+  {
+    number: 3,
+    title: "Prise de contact",
+    text: "Création d’un climat de confiance, en respectant le rythme et l’état émotionnel du cheval.",
+  },
+  {
+    number: 4,
+    title: "Évaluation corporelle",
+    text: "Par le toucher, repérage des zones de raideur, d’inconfort ou de tension pour adapter le massage.",
+  },
+  {
+    number: 5,
+    title: "Massage",
+    text: "Mise en œuvre des techniques manuelles douces et respectueuses, en tenant compte des réactions du cheval.",
+  },
+  {
+    number: 6,
+    title: "Intégration & recommandations",
+    text: "Temps d’intégration, puis échange et recommandations pour accompagner le cheval après la séance.",
+  },
+];
+
 export function MassagesPage() {
   return (
     <>
@@ -16,6 +51,8 @@ export function MassagesPage() {
           </p>
         </div>
       </section>
+
+      <Timeline title="Déroulé d’une séance" steps={MASSAGE_STEPS} />
 
       <section>
         <div className="container two-column">
@@ -91,38 +128,6 @@ export function MassagesPage() {
               <li>Maladie en cours</li>
               <li>Post-opératoire récent (sauf avis vétérinaire)</li>
             </ul>
-
-            <h3>Déroulé d’une séance</h3>
-            <ol>
-              <li>
-                <strong>Préparation</strong> – échange préalable pour comprendre les besoins de votre
-                cheval (âge, activité, antécédents, attentes) et planifier la séance.
-              </li>
-              <li>
-                <strong>Observation</strong> – analyse de la posture, de l’attitude générale, des réactions
-                et éventuelles zones de tension apparentes.
-              </li>
-              <li>
-                <strong>Prise de contact</strong> – création d’un climat de confiance, en respectant le
-                rythme et l’état émotionnel du cheval.
-              </li>
-              <li>
-                <strong>Évaluation corporelle</strong> – par le toucher, repérage des zones de raideur,
-                d’inconfort ou de tension pour adapter le massage.
-              </li>
-              <li>
-                <strong>Massage</strong> – mise en œuvre des techniques manuelles douces et
-                respectueuses, en tenant compte des réactions du cheval.
-              </li>
-              <li>
-                <strong>Temps d’intégration</strong> – pause laissée au cheval pour intégrer les bienfaits
-                de la séance et favoriser un relâchement profond.
-              </li>
-              <li>
-                <strong>Échange &amp; recommandations</strong> – retour détaillé au gardien et conseils
-                éventuels pour accompagner le cheval après la séance.
-              </li>
-            </ol>
             <p className="note">
               Le massage équin s’inscrit dans une démarche de bien-être et ne remplace en aucun
               cas l’intervention d’un vétérinaire, d’un ostéopathe ou de tout autre professionnel de
