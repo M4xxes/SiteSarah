@@ -1,4 +1,5 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { MassagesPage } from "./pages/MassagesPage";
 import { CommunicationPage } from "./pages/CommunicationPage";
@@ -7,6 +8,13 @@ import { ContactPage } from "./pages/ContactPage";
 import logo from "../assets/img/logo-animarah.png";
 
 function Layout({ children }: { children: React.ReactNode }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   return (
     <div className="page">
       <header>
@@ -54,27 +62,48 @@ function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
       </header>
+      <button
+        type="button"
+        className={`side-menu-toggle ${mobileMenuOpen ? "is-open" : ""}`}
+        onClick={() => setMobileMenuOpen((open) => !open)}
+        aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-expanded={mobileMenuOpen}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <aside className={`side-menu-panel ${mobileMenuOpen ? "is-open" : ""}`} aria-hidden={!mobileMenuOpen}>
+        <nav className="side-menu-nav" aria-label="Navigation latérale">
+          <NavLink to="/" end className={({ isActive }) => (isActive ? "is-active" : "")}>
+            Accueil
+          </NavLink>
+          <NavLink to="/massages" className={({ isActive }) => (isActive ? "is-active" : "")}>
+            Massages
+          </NavLink>
+          <NavLink
+            to="/communication"
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+          >
+            Communication animale
+          </NavLink>
+          <NavLink to="/formules" className={({ isActive }) => (isActive ? "is-active" : "")}>
+            Formules
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? "is-active" : "")}>
+            Me contacter
+          </NavLink>
+        </nav>
+      </aside>
+      {mobileMenuOpen && (
+        <button
+          type="button"
+          className="side-menu-backdrop"
+          aria-label="Fermer le menu"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
       <main>{children}</main>
-      <nav className="mobile-tabbar" aria-label="Navigation mobile">
-        <NavLink to="/" end className={({ isActive }) => (isActive ? "is-active" : "")}>
-          Accueil
-        </NavLink>
-        <NavLink to="/massages" className={({ isActive }) => (isActive ? "is-active" : "")}>
-          Massages
-        </NavLink>
-        <NavLink
-          to="/communication"
-          className={({ isActive }) => (isActive ? "is-active" : "")}
-        >
-          Communication
-        </NavLink>
-        <NavLink to="/formules" className={({ isActive }) => (isActive ? "is-active" : "")}>
-          Formules
-        </NavLink>
-        <NavLink to="/contact" className={({ isActive }) => (isActive ? "is-active" : "")}>
-          Contact
-        </NavLink>
-      </nav>
       <footer>
         <div className="container footer-inner">
           <div>
