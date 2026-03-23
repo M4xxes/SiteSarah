@@ -55,6 +55,26 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       <main>{children}</main>
+      <nav className="mobile-tabbar" aria-label="Navigation mobile">
+        <NavLink to="/" end className={({ isActive }) => (isActive ? "is-active" : "")}>
+          Accueil
+        </NavLink>
+        <NavLink to="/massages" className={({ isActive }) => (isActive ? "is-active" : "")}>
+          Massages
+        </NavLink>
+        <NavLink
+          to="/communication"
+          className={({ isActive }) => (isActive ? "is-active" : "")}
+        >
+          Communication
+        </NavLink>
+        <NavLink to="/formules" className={({ isActive }) => (isActive ? "is-active" : "")}>
+          Formules
+        </NavLink>
+        <NavLink to="/contact" className={({ isActive }) => (isActive ? "is-active" : "")}>
+          Contact
+        </NavLink>
+      </nav>
       <footer>
         <div className="container footer-inner">
           <div>

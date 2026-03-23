@@ -36,7 +36,7 @@ const MASSAGE_STEPS = [
 export function MassagesPage() {
   return (
     <>
-      <section>
+      <section className="section-cover section-cover--massages">
         <div className="container section-heading">
           <div className="section-kicker">Massages équins</div>
           <h1 className="section-title">Prendre soin du cheval dans sa globalité</h1>
@@ -55,8 +55,8 @@ export function MassagesPage() {
       <Timeline title="Déroulé d’une séance" steps={MASSAGE_STEPS} />
 
       <section>
-        <div className="container two-column">
-          <article className="prose">
+        <div className="container">
+          <article className="prose prose--massages">
             <h2>1. Définition</h2>
             <p>
               Le massage équin est une pratique de bien-être destinée aux chevaux. Il consiste en
@@ -69,7 +69,7 @@ export function MassagesPage() {
               bien-être global du cheval, qu’il soit de loisir ou de sport.
             </p>
 
-            <h3>2. Les bienfaits</h3>
+            <h2>2. Les bienfaits</h2>
             <p>Les bienfaits du massage équin sont nombreux, sur le plan physique comme mental :</p>
             <ul>
               <li>Augmentation des capacités vitales</li>
@@ -87,7 +87,7 @@ export function MassagesPage() {
               <li>Favorise la proprioception</li>
             </ul>
 
-            <h3>3. Quels chevaux et dans quels cas&nbsp;?</h3>
+            <h2>3. Quels chevaux et dans quels cas&nbsp;?</h2>
             <p>
               Chaque cheval étant unique, l’accompagnement est toujours adapté à ses besoins
               physiques et émotionnels. Le massage équin s’adresse à tous les profils de chevaux&nbsp;:
@@ -110,9 +110,7 @@ export function MassagesPage() {
               <li>Compensation post-soins (ostéopathie, suivi vétérinaire…)</li>
               <li>Prévention des blessures, et bien d’autres situations du quotidien</li>
             </ul>
-          </article>
 
-          <aside className="prose">
             <h2>4. Fréquence &amp; contre-indications</h2>
             <p>La fréquence des séances dépend des besoins du cheval et de son activité :</p>
             <ul>
@@ -133,7 +131,7 @@ export function MassagesPage() {
               cas l’intervention d’un vétérinaire, d’un ostéopathe ou de tout autre professionnel de
               santé.
             </p>
-          </aside>
+          </article>
         </div>
       </section>
 

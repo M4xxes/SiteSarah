@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Timeline } from "../components/Timeline";
+import galleryGoldenPortrait from "../../assets/img/gallery-5-golden-portrait.png";
+import galleryHorsePortrait from "../../assets/img/gallery-1-horse-portrait.png";
 
 const SESSION_STEPS = [
   {
@@ -52,7 +54,7 @@ export function HomePage() {
                 des professionnels, pour accompagner le cheval dans sa globalité, sur le plan
                 physique et émotionnel.
               </p>
-              <div className="hero-actions">
+              {/* <div className="hero-actions">
                 <Link to="/massages" className="btn btn-primary">
                   Massages équins
                 </Link>
@@ -65,7 +67,7 @@ export function HomePage() {
                 <Link to="/contact" className="btn btn-outline">
                   Me contacter
                 </Link>
-              </div>
+              </div> */}
             </div>
             <aside className="hero-panel">
               <div className="hero-panel-title">À propos</div>
@@ -80,8 +82,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <Timeline title="Déroulé d’une séance" steps={SESSION_STEPS} />
 
       <section className="section-presentation">
         <div className="container">
@@ -160,6 +160,24 @@ export function HomePage() {
           </div>
           <div className="section-cta" style={{ marginTop: "2.5rem", textAlign: "center" }}>
             <Link to="/contact" className="btn btn-primary">Me contacter</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-photo-strip">
+        <div className="container">
+          <div className="photo-strip-grid">
+            <figure className="photo-strip-item">
+              <img
+                className="photo-strip-img--contain"
+                src={galleryGoldenPortrait}
+                alt="Golden retriever en portrait"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="photo-strip-item">
+              <img src={galleryHorsePortrait} alt="Portrait de cheval blanc" loading="lazy" />
+            </figure>
           </div>
         </div>
       </section>

@@ -36,7 +36,7 @@ const COMMUNICATION_STEPS = [
 export function CommunicationPage() {
   return (
     <>
-      <section>
+      <section className="section-cover section-cover--communication">
         <div className="container section-heading">
           <div className="section-kicker">Communication animale</div>
           <h1 className="section-title">Mieux comprendre votre compagnon</h1>
@@ -49,8 +49,8 @@ export function CommunicationPage() {
       </section>
 
       <section>
-        <div className="container two-column">
-          <article className="prose">
+        <div className="container">
+          <article className="prose prose--communication">
             <h2>Définition &amp; fonctionnement</h2>
             <p>
               Le communicant animal utilise différents canaux pour percevoir les messages que
@@ -90,9 +90,6 @@ export function CommunicationPage() {
               <li>Accompagner un compagnon en fin de vie</li>
               <li>Communiquer avec un animal perdu ou décédé</li>
             </ul>
-          </article>
-
-          <aside className="prose">
             <h2>Éléments nécessaires</h2>
             <p>Pour réaliser une communication animale, j’ai besoin de&nbsp;:</p>
             <ul>
@@ -108,7 +105,7 @@ export function CommunicationPage() {
               vétérinaire, mais vient en complément, en apportant une autre forme d’écoute et de
               compréhension.
             </p>
-          </aside>
+          </article>
         </div>
       </section>
 
