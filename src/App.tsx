@@ -7,6 +7,16 @@ import { FormulesPage } from "./pages/FormulesPage";
 import { ContactPage } from "./pages/ContactPage";
 import logo from "../assets/img/logo-animarah.png";
 
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
+
+  return null;
+}
+
 function Layout({ children }: { children: React.ReactNode }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -17,6 +27,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="page">
+      <ScrollToTop />
       <header>
         <div className="container header-inner">
           <NavLink to="/" className="brand">

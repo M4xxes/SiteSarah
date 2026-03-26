@@ -8,6 +8,15 @@ import galleryGoldenPortrait from "../../assets/img/gallery-5-golden-portrait.pn
 import galleryPonyRider from "../../assets/img/gallery-6-pony-rider.png";
 import galleryHeatherDog from "../../assets/img/gallery-7-heather-dog.png";
 import galleryYorkshireBridge from "../../assets/img/gallery-8-yorkshire-bridge.png";
+import contestTete from "../../assets/img/formules-concours-tete.png";
+import contestSabot from "../../assets/img/formules-concours-sabot.png";
+import contestEpaule from "../../assets/img/formules-concours-epaule.png";
+import formulesChevalCouverture from "../../assets/img/formules-cheval-couverture.png";
+import formulesChevalProfilVignes from "../../assets/img/formules-cheval-profil-vignes.png";
+import formulesChevalBlancChemin from "../../assets/img/formules-cheval-blanc-chemin.png";
+import formulesDressageCarriere from "../../assets/img/formules-dressage-carriere.png";
+import formulesSautObstacle from "../../assets/img/formules-saut-obstacle.png";
+import formulesConcoursRideMer from "../../assets/img/formules-concours-ride-mer.png";
 
 type OfferCard = {
   category: string;
@@ -134,7 +143,7 @@ export function FormulesPage() {
           dispositions physiques.
         </p>
       ),
-      backgroundImage: galleryJumpingHorse,
+      backgroundImage: contestTete,
     },
     {
       category: "Après épreuve",
@@ -150,7 +159,7 @@ export function FormulesPage() {
           récupération musculaire.
         </p>
       ),
-      backgroundImage: galleryHorseRider,
+      backgroundImage: contestSabot,
     },
     {
       category: "Pack",
@@ -166,7 +175,57 @@ export function FormulesPage() {
           au long de la journée.
         </p>
       ),
-      backgroundImage: galleryHorsePortrait,
+      backgroundImage: contestEpaule,
+    },
+  ];
+
+  const communicationContestCards: OfferCard[] = [
+    {
+      category: "Communication concours",
+      title: "Avant épreuve",
+      price: <>25&nbsp;€</>,
+      content: (
+        <ul>
+          <li>À distance sauf si présente sur le concours</li>
+          <li>2 questions + un message du gardien</li>
+          <li>
+            Un échange avec l’animal sur son état émotionnel, son ressenti, ses appréhensions
+          </li>
+          <li>Compte rendu oral immédiat</li>
+          <li>Possibilité d’ajouter un état physique général&nbsp;: +5&nbsp;€</li>
+        </ul>
+      ),
+      backgroundImage: formulesConcoursRideMer,
+    },
+    {
+      category: "Communication concours",
+      title: "Après épreuve",
+      price: <>25&nbsp;€</>,
+      content: (
+        <ul>
+          <li>À distance sauf si présente sur le concours</li>
+          <li>2 questions + un message du gardien</li>
+          <li>
+            Un échange avec l’animal sur son état émotionnel, son ressenti, ses impressions
+          </li>
+          <li>Compte rendu oral immédiat</li>
+          <li>Possibilité d’ajouter un état physique général&nbsp;: +5&nbsp;€</li>
+        </ul>
+      ),
+      backgroundImage: formulesChevalCouverture,
+    },
+    {
+      category: "Communication concours",
+      title: "Pack concours",
+      price: <>40&nbsp;€</>,
+      content: (
+        <ul>
+          <li>À distance sauf si présente sur le concours</li>
+          <li>Communication avant et après épreuve</li>
+          <li>Possibilité d’ajouter un état physique général&nbsp;: +10&nbsp;€</li>
+        </ul>
+      ),
+      backgroundImage: formulesChevalBlancChemin,
     },
   ];
 
@@ -257,6 +316,7 @@ export function FormulesPage() {
   const [massageIndex, setMassageIndex] = useState(0);
   const [followupIndex, setFollowupIndex] = useState(0);
   const [contestIndex, setContestIndex] = useState(0);
+  const [communicationContestIndex, setCommunicationContestIndex] = useState(0);
   const [communicationIndex, setCommunicationIndex] = useState(0);
 
   const renderCardCarousel = (
@@ -360,6 +420,27 @@ export function FormulesPage() {
         </div>
       </section>
 
+      <section className="massage-editorial massage-editorial--soft">
+        <div className="container">
+          <div className="massage-photo-row massage-photo-row--2">
+            <figure className="massage-photo-card">
+              <img
+                src={formulesChevalCouverture}
+                alt="Cheval blanc portant une couverture"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="massage-photo-card">
+              <img
+                src={formulesChevalProfilVignes}
+                alt="Profil d’un cheval blanc dans les vignes"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className="container">
           <div className="section-kicker">Accompagnements</div>
@@ -367,6 +448,18 @@ export function FormulesPage() {
           <div style={{ marginTop: "2rem" }}>
             {renderCardCarousel(followupCards, followupIndex, setFollowupIndex, "followup")}
           </div>
+        </div>
+      </section>
+
+      <section className="massage-editorial">
+        <div className="container">
+          <figure className="massage-photo-banner">
+            <img
+              src={formulesChevalBlancChemin}
+              alt="Cheval blanc sur un chemin, lumière ensoleillée"
+              loading="lazy"
+            />
+          </figure>
         </div>
       </section>
 
@@ -383,17 +476,66 @@ export function FormulesPage() {
               </p>
             </div>
             <figure className="section-media-image">
-              <img src={galleryJumpingHorse} alt="Cheval en saut d'obstacle" loading="lazy" />
+              <img
+                src={contestEpaule}
+                alt="Massage du cheval en concours"
+                loading="lazy"
+              />
             </figure>
           </div>
 
           {renderCardCarousel(contestCards, contestIndex, setContestIndex, "contest")}
+
+          <div style={{ marginTop: "2.5rem" }}>
+            <div className="section-kicker">Concours</div>
+            <h3 className="section-title" style={{ textAlign: "left" }}>
+              Communication concours
+            </h3>
+            <p className="section-intro section-intro--left" style={{ marginBottom: "2rem" }}>
+              Avant et après épreuve, pour accompagner le cheval sur son état émotionnel, ses
+              ressentis et ses besoins du moment.
+            </p>
+            {renderCardCarousel(
+              communicationContestCards,
+              communicationContestIndex,
+              setCommunicationContestIndex,
+              "communication-contest",
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="massage-editorial massage-editorial--soft">
+        <div className="container">
+          <div className="massage-photo-row massage-photo-row--3">
+            <figure className="massage-photo-card">
+              <img
+                src={formulesConcoursRideMer}
+                alt="Cavalière à cheval au bord de l’eau"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="massage-photo-card">
+              <img
+                src={formulesDressageCarriere}
+                alt="Cavalière travaillant le cheval en carrière"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="massage-photo-card massage-photo-card--tall">
+              <img
+                src={formulesSautObstacle}
+                alt="Cheval en saut d’obstacle"
+                loading="lazy"
+              />
+            </figure>
+          </div>
         </div>
       </section>
 
       <section>
         <div className="container">
-          <div className="section-media-head">
+          <div className="section-media-head section-media-head--no-image">
             <div>
               <div className="section-kicker">Communication animale</div>
               <h2 className="section-title">Formules à distance</h2>
@@ -403,9 +545,6 @@ export function FormulesPage() {
                 sont regroupées dans cette offre.
               </p>
             </div>
-            <figure className="section-media-image">
-              <img src={gallerySnowDog} alt="Chien dans la neige" loading="lazy" />
-            </figure>
           </div>
 
           {renderCardCarousel(

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { Timeline } from "../components/Timeline";
-import galleryGoldenPortrait from "../../assets/img/gallery-5-golden-portrait.png";
-import galleryHorsePortrait from "../../assets/img/gallery-1-horse-portrait.png";
+import homeStripFemmeCheval from "../../assets/img/home-strip-femme-cheval-marron.png";
+import homeStripChevalBlanc from "../../assets/img/home-strip-cheval-blanc-automne.png";
 
 const SESSION_STEPS = [
   {
@@ -47,7 +46,7 @@ export function HomePage() {
                 Massage équin &amp; communication animale
               </div>
               <h1 className="hero-title">
-                Offrir au cheval un moment de confort, d’écoute et de sérénité
+                Accompagner votre cheval avec douceur et respect
               </h1>
               <p className="hero-subtitle">
                 Interventions en région lyonnaise et ses alentours, auprès des particuliers comme
@@ -169,14 +168,17 @@ export function HomePage() {
           <div className="photo-strip-grid">
             <figure className="photo-strip-item">
               <img
-                className="photo-strip-img--contain"
-                src={galleryGoldenPortrait}
-                alt="Golden retriever en portrait"
+                src={homeStripFemmeCheval}
+                alt="Jeune femme caressant doucement le visage d’un cheval bai"
                 loading="lazy"
               />
             </figure>
             <figure className="photo-strip-item">
-              <img src={galleryHorsePortrait} alt="Portrait de cheval blanc" loading="lazy" />
+              <img
+                src={homeStripChevalBlanc}
+                alt="Jeune femme accroupie auprès d’un cheval blanc sur un chemin en automne"
+                loading="lazy"
+              />
             </figure>
           </div>
         </div>
