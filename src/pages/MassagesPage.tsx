@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Timeline } from "../components/Timeline";
 import imgVignoble from "../../assets/img/massage-vignoble-cheval-blanc.png";
 import imgCheminAutomne from "../../assets/img/massage-chemin-automne.png";
@@ -177,7 +176,7 @@ export function MassagesPage() {
       {/* Bandeau pleine largeur — détente */}
       <section className="massage-editorial">
         <div className="container">
-          <figure className="massage-photo-banner">
+          <figure className="massage-photo-banner massage-photo-banner--detendu">
             <img src={imgDetendu} alt="Cheval marron détendu, œil fermé" loading="lazy" />
           </figure>
         </div>
@@ -213,18 +212,6 @@ export function MassagesPage() {
               <img src={imgSabot} alt="Examen du sabot et du membre pendant une séance" loading="lazy" />
             </figure>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container section-heading">
-          <div className="section-kicker">Formules dédiées aux massages</div>
-          <h2 className="section-title">Massages à la carte et accompagnements</h2>
-          <p className="section-intro">
-            Chaque séance est adaptée au cheval en fonction de son âge, de son activité, de ses
-            antécédents et de ses besoins. Retrouvez le détail des formules dans l’onglet{" "}
-            <Link to="/formules">Formules</Link>.
-          </p>
         </div>
       </section>
 

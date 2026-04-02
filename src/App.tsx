@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, NavLink, useLocation } from "react-router-dom";
+import { Routes, Route, NavLink, Link, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { MassagesPage } from "./pages/MassagesPage";
 import { CommunicationPage } from "./pages/CommunicationPage";
@@ -116,6 +116,17 @@ function Layout({ children }: { children: React.ReactNode }) {
       )}
       <main>{children}</main>
       <footer>
+        {location.pathname === "/massages" && (
+          <div className="container section-heading footer-massages-formules">
+            <div className="section-kicker">Formules dédiées aux massages</div>
+            <h2 className="section-title">Massages à la carte et accompagnements</h2>
+            <p className="section-intro">
+              Chaque séance est adaptée au cheval en fonction de son âge, de son activité, de ses
+              antécédents et de ses besoins. Retrouvez le détail des formules dans l’onglet{" "}
+              <Link to="/formules">Formules</Link>.
+            </p>
+          </div>
+        )}
         <div className="container footer-inner">
           <div>
             © ANIMARAH – Massage équin & communication animale – Région lyonnaise

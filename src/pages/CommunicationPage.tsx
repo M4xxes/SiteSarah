@@ -78,6 +78,37 @@ export function CommunicationPage() {
         </div>
       </section>
 
+      <section className="massage-editorial">
+        <div className="container">
+          <div className="massage-split massage-split--text-first massage-split--align-end">
+            <article className="prose prose--communication massage-prose-block">
+              <h2>Éléments nécessaires</h2>
+              <p>Pour réaliser une communication animale, j’ai besoin de&nbsp;:</p>
+              <ul>
+                <li>Une photo de votre animal</li>
+                <li>Son nom</li>
+                <li>Son âge</li>
+                <li>Son sexe</li>
+                <li>Le nom de son gardien (propriétaire)</li>
+                <li>L’accord de son gardien (propriétaire)</li>
+              </ul>
+              <p className="note">
+                La communication animale ne remplace en aucun cas un diagnostic ou un avis
+                vétérinaire, mais vient en complément, en apportant une autre forme d’écoute et de
+                compréhension.
+              </p>
+            </article>
+            <figure className="massage-photo-card massage-photo-card--accent">
+              <img
+                src={imgChat}
+                alt="Chat tigré et blanc assis sur un arbre à chat, regard attentif"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section className="massage-editorial massage-editorial--soft">
         <div className="container">
           <div className="massage-photo-row massage-photo-row--3">
@@ -161,43 +192,12 @@ export function CommunicationPage() {
       <section className="massage-editorial massage-editorial--soft">
         <div className="container">
           <figure className="massage-photo-banner communication-photo-banner--horse">
-            <img
+            {/* <img
               src={imgChevalBlanc}
               alt="Profil d’un cheval blanc dans un champ avec ciel bleu"
               loading="lazy"
-            />
+            /> */}
           </figure>
-        </div>
-      </section>
-
-      <section className="massage-editorial">
-        <div className="container">
-          <div className="massage-split massage-split--text-first massage-split--align-end">
-            <article className="prose prose--communication massage-prose-block">
-              <h2>Éléments nécessaires</h2>
-              <p>Pour réaliser une communication animale, j’ai besoin de&nbsp;:</p>
-              <ul>
-                <li>Une photo de votre animal</li>
-                <li>Son nom</li>
-                <li>Son âge</li>
-                <li>Son sexe</li>
-                <li>Le nom de son gardien (propriétaire)</li>
-                <li>L’accord de son gardien (propriétaire)</li>
-              </ul>
-              <p className="note">
-                La communication animale ne remplace en aucun cas un diagnostic ou un avis
-                vétérinaire, mais vient en complément, en apportant une autre forme d’écoute et de
-                compréhension.
-              </p>
-            </article>
-            <figure className="massage-photo-card massage-photo-card--accent">
-              <img
-                src={imgChat}
-                alt="Chat tigré et blanc assis sur un arbre à chat, regard attentif"
-                loading="lazy"
-              />
-            </figure>
-          </div>
         </div>
       </section>
 

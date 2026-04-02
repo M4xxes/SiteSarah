@@ -589,8 +589,15 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
   object-position: center center;
 }
 
+.massage-photo-banner--detendu img {
+  max-height: 340px;
+  object-position: center 50%;
+}
+
 .communication-photo-banner--horse img {
+  object-fit: contain;
   object-position: 52% center;
+  background: #f7f2ec;
 }
 
 .massage-split .massage-prose-block.prose--communication > h3:first-of-type {
@@ -603,16 +610,7 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
   }
 
   .massage-photo-row--3 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .massage-photo-row--3 .massage-photo-card--tall {
-    grid-column: 1 / -1;
-  }
-
-  .massage-photo-card--tall img {
-    aspect-ratio: 16 / 9;
-    max-height: 360px;
+    grid-template-columns: 1fr;
   }
 
   .massage-split,
@@ -621,8 +619,19 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
     grid-template-columns: 1fr;
   }
 
+  /* Mobile : texte d’abord, photos après (bloc type « Objectifs » + images) */
+  .massage-split--media-first {
+    grid-template-areas:
+      "massage-prose"
+      "massage-media";
+  }
+
   .massage-split--media-first .massage-split-stack {
-    order: -1;
+    grid-area: massage-media;
+  }
+
+  .massage-split--media-first > article {
+    grid-area: massage-prose;
   }
 }
 
@@ -1027,6 +1036,7 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
   max-height: 420px;
   perspective: 1000px;
   cursor: pointer;
+  isolation: isolate;
 }
 
 .flip-card-inner {
@@ -1054,6 +1064,7 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
   justify-content: center;
   border: 1px solid #e3d8cf;
   box-shadow: 0 16px 32px rgba(41, 25, 10, 0.07);
+  transform: translateZ(0);
 }
 
 .flip-card-front {
@@ -1160,9 +1171,10 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
 
 .flip-card-back {
   background: #fff;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0);
   overflow-y: auto;
   justify-content: flex-start;
+  gap: 0.45rem;
 }
 
 .flip-card-category {
@@ -1188,6 +1200,8 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
 }
 
 .flip-card-price span {
+  display: block;
+  margin-top: 0.25rem;
   font-weight: 400;
   color: #7e6c5b;
   font-size: 0.9rem;
@@ -1202,6 +1216,7 @@ section:nth-of-type(even):not(.contact-section):not(.contact-page-hero) {
   font-size: 0.9rem;
   color: #4b3b2f;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .flip-card-back .prose-text p {
@@ -1416,6 +1431,27 @@ footer {
   font-size: 0.8rem;
   color: #7e6c5b;
   margin-top: auto;
+}
+
+.footer-massages-formules {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.footer-massages-formules .section-intro {
+  margin-bottom: 0;
+}
+
+.footer-massages-formules .section-intro a {
+  color: #8a6b4a;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-massages-formules .section-intro a:hover {
+  color: #6d5238;
 }
 
 .footer-inner {

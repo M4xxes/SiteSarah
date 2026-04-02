@@ -19,11 +19,7 @@ export function FlipCard({ category, title, price, children, backgroundImage }: 
           ? ({ ["--flip-card-bg" as string]: `url("${backgroundImage}")` } as CSSProperties)
           : undefined
       }
-      onClick={() => setFlipped((f) => !f)}
-      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setFlipped((f) => !f)}
-      role="button"
-      tabIndex={0}
-      aria-label={flipped ? "Revenir au titre" : "Voir la description"}
+      aria-label={flipped ? "Carte retournée" : "Carte face avant"}
     >
       <div className="flip-card-inner">
         <div className="flip-card-front">

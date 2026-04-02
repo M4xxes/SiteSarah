@@ -39,6 +39,9 @@ export function ContactPage() {
               >
                 E-mail – animarah.pascual@gmail.com
               </a>
+              <a className="btn btn-outline" href="tel:+33640334701">
+                Téléphone – 06.40.33.47.01
+              </a>
               <a
                 className="btn btn-outline"
                 href="https://www.facebook.com/people/Animarah/61568162491616/"
