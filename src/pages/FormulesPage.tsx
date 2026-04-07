@@ -8,6 +8,9 @@ import galleryGoldenPortrait from "../../assets/img/gallery-5-golden-portrait.pn
 import galleryPonyRider from "../../assets/img/gallery-6-pony-rider.png";
 import galleryHeatherDog from "../../assets/img/gallery-7-heather-dog.png";
 import galleryYorkshireBridge from "../../assets/img/gallery-8-yorkshire-bridge.png";
+import formulesMassageDetente from "../../assets/img/formules-massage-detente.png";
+import formulesMassageZones from "../../assets/img/formules-massage-zones.png";
+import formulesMassageMembres from "../../assets/img/formules-massage-membres.png";
 import contestTete from "../../assets/img/formules-concours-tete.png";
 import contestSabot from "../../assets/img/formules-concours-sabot.png";
 import contestEpaule from "../../assets/img/formules-concours-epaule.png";
@@ -39,7 +42,7 @@ export function FormulesPage() {
           musculaire et rééquilibrer le corps dans sa globalité.
         </p>
       ),
-      backgroundImage: galleryHorseRider,
+      backgroundImage: formulesMassageDetente,
     },
     {
       category: "Massage ciblé",
@@ -55,7 +58,7 @@ export function FormulesPage() {
           queue, ventre. Idéal pour répondre à un besoin localisé.
         </p>
       ),
-      backgroundImage: galleryHorsePortrait,
+      backgroundImage: formulesMassageZones,
     },
     {
       category: "Membres",
@@ -71,7 +74,7 @@ export function FormulesPage() {
           récupération après l’effort ou en phase de rééducation.
         </p>
       ),
-      backgroundImage: galleryPonyRider,
+      backgroundImage: formulesMassageMembres,
     },
   ];
 
