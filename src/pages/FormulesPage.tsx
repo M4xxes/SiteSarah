@@ -11,6 +11,9 @@ import galleryYorkshireBridge from "../../assets/img/gallery-8-yorkshire-bridge.
 import formulesMassageDetente from "../../assets/img/formules-massage-detente.png";
 import formulesMassageZones from "../../assets/img/formules-massage-zones.png";
 import formulesMassageMembres from "../../assets/img/formules-massage-membres.png";
+import formulesSuiviPacks from "../../assets/img/formules-suivi-packs.png";
+import formulesSuiviRegulier from "../../assets/img/formules-suivi-regulier.png";
+import formulesSuiviForfaits from "../../assets/img/formules-suivi-forfaits.png";
 import contestTete from "../../assets/img/formules-concours-tete.png";
 import contestSabot from "../../assets/img/formules-concours-sabot.png";
 import contestEpaule from "../../assets/img/formules-concours-epaule.png";
@@ -93,7 +96,7 @@ export function FormulesPage() {
           </ul>
         </>
       ),
-      backgroundImage: galleryGoldenPortrait,
+      backgroundImage: formulesSuiviPacks,
     },
     {
       category: "Suivi",
@@ -111,7 +114,7 @@ export function FormulesPage() {
           </ul>
         </>
       ),
-      backgroundImage: galleryHeatherDog,
+      backgroundImage: formulesSuiviRegulier,
     },
     {
       category: "Clubs & structures",
@@ -124,7 +127,7 @@ export function FormulesPage() {
           <li>Junior – 3 séances&nbsp;: 105&nbsp;€ + trajet (séances à l’unité possibles)</li>
         </ul>
       ),
-      backgroundImage: galleryYorkshireBridge,
+      backgroundImage: formulesSuiviForfaits,
     },
   ];
 
